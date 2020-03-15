@@ -1,0 +1,34 @@
+{
+  "name": "List@Chat",
+  "short_name": "List@Chat",
+  "icons": [{
+    "src": "./img/listachat-icon-128.png",
+      "sizes": "128x128",
+      "type": "image/png"
+    }, {
+      "src": "./img/listachat-icon-144.png",
+      "sizes": "144x144",
+      "type": "image/png"
+    }, {
+      "src": "./img/listachat-icon-152.png",
+      "sizes": "152x152",
+      "type": "image/png"
+    }, {
+      "src": "./img/listachat-icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    }, {
+      "src": "./img/listachat-icon-256.png",
+      "sizes": "256x256",
+      "type": "image/png"
+    }, {
+      "src": "./img/listachat-icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }],
+  "lang": "fr-FR",
+  "start_url": "./index.php",
+  "display": "standalone",
+  "background_color": "white",
+  "theme_color": "white"
+}
