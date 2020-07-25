@@ -30,11 +30,19 @@
     <!-- Navbar -->
     <div id="navbar">
       <nav class="navbar fixed-top text-light navbar-dark bg-dark">
-        <img src="./img/listachat-icon-32.png" class="d-inline-block align-top" alt="">
-        List@Chat
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
+        <div class="d-flex w-100">
+          <div class="pr-2 pl-2 pt-1 pb-0 flex-shrink-1">
+            <img src="./img/listachat-icon-32.png" class="d-inline-block align-top" alt="List@Chat">
+          </div>
+          <div class="pr-4 pl-4 pt-1 pb-0 w-100">
+            <input type="text" class="form-control form-control-sm" placeholder="Recherche" v-model="searchvalue" v-on:keyup="filterList">
+          </div>
+          <div class="pr-2 pl-2 pt-0 pb-0 flex-shrink-1">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+          </div>
+        </div>
         <div class="collapse navbar-collapse" id="navbarNav">
           <div class="navbar-nav">
             <a class="nav-item nav-link" href="#" v-on:click="addArticle">Ajouter un article</a>

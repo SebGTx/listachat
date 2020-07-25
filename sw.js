@@ -1,4 +1,4 @@
-/* version v0.0.20 */
+/* version v0.0.21 */
 var cacheName = 'listachat-pwa';
 var filesToCache = [
   './',

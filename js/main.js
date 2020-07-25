@@ -66,9 +66,13 @@ Vue.directive('longpress', {
 var navbarApp = new Vue({
   el: '#navbar',
   data: {
-    sortkey: 'A'
+    sortkey: 'A',
+    searchvalue: ''
   },
   methods: {
+    filterList : function (event) {
+      groceryListApp.$forceUpdate();
+    },
     addArticle: function (event) {
       articleContextMenuApp.addmode = true;
       articleContextMenuApp.source = null;
@@ -498,10 +502,16 @@ var groceryListApp = new Vue({
       
       switch (navbarApp.sortkey) {
         case 'C':
-          return [...this.groceryList].sort(compareCheckedCategoryText);
+          //return [...this.groceryList].sort(compareCheckedCategoryText);
+          return this.groceryList.filter(item => {
+            return item.text.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().indexOf(navbarApp.searchvalue.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase()) > -1
+          }).sort(compareCheckedCategoryText);
           break;
         default:
-          return [...this.groceryList].sort(compareCheckedText);
+          //return [...this.groceryList].sort(compareCheckedText);
+          return this.groceryList.filter(item => {
+            return item.text.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().indexOf(navbarApp.searchvalue.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase()) > -1
+          }).sort(compareCheckedText);
       }
       
     }
